@@ -9,7 +9,7 @@ import org.junit.Test;
 import chat.controller.ChatbotController;
 import chat.model.Chatbot;
 import chat.view.PopupDisplay;
-import chat.view.ChatFrame;
+//import chat.view.ChatFrame;
 
 public class ControllerTest
 {
@@ -40,14 +40,14 @@ public class ControllerTest
 		assertTrue("This test should alway pass.", true);
 	}
 
-	@Test
-	public void testInteractWithChatbot()
-	{
-		assertNotNull("Interact method should not return null", testedController.interactWithChatbot(""));
-		assertNotNull("Interact method should not return null still", testedController.interactWithChatbot(null));
-		assertTrue("Interact method should always return a String longer than 5", testedController.interactWithChatbot("").length() > 5);
-		
-	}
+//	@Test
+//	public void testInteractWithChatbot()
+//	{
+//		assertNotNull("Interact method should not return null", testedController.interactWithChatbot(""));
+//		assertNotNull("Interact method should not return null still", testedController.interactWithChatbot(null));
+//		assertTrue("Interact method should always return a String longer than 5", testedController.interactWithChatbot("").length() > 5);
+//		
+//	}
 
 	@Test
 	public void testGetChatbot()
@@ -63,10 +63,10 @@ public class ControllerTest
 		assertTrue("Popup display type should be used.", testedController.getDisplay() instanceof PopupDisplay);
 	}
 	
-	public void testGetChatFrame()
-	{
-		assertNotNull("ChatFrame must be initialized.", testedController.getChatFrame());
-		assertTrue("Chatframe needs to be returned", testedController.getChatFrame() instanceof ChatFrame);
-	}
+//	public void testGetChatFrame()
+//	{
+//		assertNotNull("ChatFrame must be initialized.", testedController.getChatFrame());
+//		assertTrue("Chatframe needs to be returned", testedController.getChatFrame() instanceof ChatFrame);
+//	}
 
 }

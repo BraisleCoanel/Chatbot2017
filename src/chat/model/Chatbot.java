@@ -57,9 +57,9 @@ public class Chatbot
 	public String processConversation(String input)
 	{
 		String chatbotResponse = "";
-		chatbotResponse += "You said:" + "\n" + input + "\n";
-		
-		chatbotResponse += buildChatbotResponse(); 
+//		chatbotResponse += "You said:" + "\n" + input + "\n";
+//		
+//		chatbotResponse += buildChatbotResponse(); 
 		
 		return chatbotResponse;
 	}
@@ -86,6 +86,7 @@ public class Chatbot
 	
 	public boolean cuteAnimalMemeChecker(String input)
 	{
+		
 		return false;
 	}
 	
