@@ -57,11 +57,33 @@ public class Chatbot
 	public String processConversation(String input)
 	{
 		String chatbotResponse = "";
-//		chatbotResponse += "You said:" + "\n" + input + "\n";
-//		
-//		chatbotResponse += buildChatbotResponse(); 
+		chatbotResponse += "You said:" + "\n" + input + "\n";
+		
+		chatbotResponse += buildChatbotResponse(); 
 		
 		return chatbotResponse;
+	}
+	
+	private String buildChatbotResponse()
+	{
+		String response = "I ";
+		int random = (int) (Math.random() * verbs.length);
+		
+		response += verbs[random];
+		
+		random = (int) (Math.random() * topics.length);
+		response += " " + topics[random] + "\n";
+		
+		random = (int) (Math.random() * questions.length);
+		response += " " + questions[random] + "\n";
+		
+		random = (int) (Math.random() * 2);
+		
+		if(random % 2 == 0)
+		{
+			random = (int) (Math.random() * movieList.size());
+		}
+		return null;
 	}
 	
 	public boolean lengthChecker(String input)
@@ -86,7 +108,6 @@ public class Chatbot
 	
 	public boolean cuteAnimalMemeChecker(String input)
 	{
-		
 		return false;
 	}
 	
