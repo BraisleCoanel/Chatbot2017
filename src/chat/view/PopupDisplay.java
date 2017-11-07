@@ -11,7 +11,7 @@ public class PopupDisplay
 	
 	public PopupDisplay()
 	{
-		icon = new ImageIcon(getClass().getResource("images/cool_pic.png"));
+		icon = new ImageIcon(getClass().getResource(""));
 		windowTitle = "Chatbot says";
 	}
 

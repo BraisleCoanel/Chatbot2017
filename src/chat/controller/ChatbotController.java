@@ -3,18 +3,18 @@ package chat.controller;
 import java.util.List;
 import java.util.ArrayList;
 import chat.view.PopupDisplay;
-import las.model.Kahoot;
 import chat.model.Chatbot;
 
 public class ChatbotController
 {
-
+	
 	private PopupDisplay display;
 	private Chatbot chatbot;
 	
 	public ChatbotController()
 	{
 		chatbot = new Chatbot("Branton Martinson");
+		display = new PopupDisplay();
 	}
 	
 	public void start()
@@ -30,7 +30,8 @@ public class ChatbotController
 		}
 	}
 	
-	public String popupChat(String chat);
+	
+	private String popupChat(String chat)
 	{
 		String chatbotSays = "";
 		
@@ -38,5 +39,16 @@ public class ChatbotController
 		
 		return chatbotSays;
 				
+	}
+	
+	public Chatbot getChatbot() 
+	{
+		return chatbot;
+	}
+	
+	public PopupDisplay getDisplay()
+	{
+		return display;
+	}
 	
 }
