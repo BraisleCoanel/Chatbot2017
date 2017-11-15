@@ -4,17 +4,21 @@ import java.util.List;
 import java.util.ArrayList;
 import chat.view.PopupDisplay;
 import chat.model.Chatbot;
+import chat.view.ChatFrame;
+import chat.view.PopupDisplay;
 
 public class ChatbotController
 {
 	
 	private PopupDisplay display;
 	private Chatbot chatbot;
+	private ChatFrame appFrame;
 	
 	public ChatbotController()
 	{
 		chatbot = new Chatbot("Branton Martinson");
 		display = new PopupDisplay();
+		appFrame = new ChatFrame(this);
 	}
 	
 	public void start()

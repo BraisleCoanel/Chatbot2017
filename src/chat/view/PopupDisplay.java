@@ -3,6 +3,7 @@ package chat.view;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
+
 public class PopupDisplay
 {
 
