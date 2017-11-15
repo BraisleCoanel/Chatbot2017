@@ -24,13 +24,13 @@ public class Chatbot
 		this.shoppingList = null;
 		this.cuteAnimalMemes = null;
 		this.currentTime = null;
-		this.questions = null;
+		this.questions = new String [10];
 		this.username = null;
 		this.content = null;
 		this.intro = null;
 		this.currentTime = null;
-		this.topics = null;
-		this.verbs = null;
+		this.topics = new String [7];
+		this.verbs = new String [4];
 		this.followUps = null;
 	}
 
@@ -51,7 +51,10 @@ public class Chatbot
 	
 	private void buildQuestions()
 	{
-		
+		questions[0] = "What is your name?";
+		questions[1] = "What is your favorite color?";
+		questions[2] = "How has your day been?";
+		questions[3] = "What is your favorite food?";
 	}
 	
 	public String processConversation(String input)
@@ -83,8 +86,28 @@ public class Chatbot
 		{
 			random = (int) (Math.random() * movieList.size());
 		}
-		return null;
+		return response;
 	}
+	
+	private void buildVerbs()
+	{
+		verbs[0] = "like";
+		verbs[1] = "dislike";
+		verbs[2] = "am ambivalent about";
+		verbs[3] = "am thinking about";
+	}
+	
+	private void buildTopics()
+	{
+		topics[0] = "movies";
+		topics[1] = "shopping";
+		topics[2] = "cute animal memes";
+		topics[3] = "programming";
+		topics[4] = "animals";
+		topics[5] = "rubber ducks";
+		topics[6] = "bread";
+	}
+	
 	
 	public boolean lengthChecker(String input)
 	{
@@ -158,6 +181,7 @@ public class Chatbot
 	
 	public String[] getVerbs()
 	{
+		
 		return verbs;
 	}
 
