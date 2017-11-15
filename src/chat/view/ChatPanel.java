@@ -8,7 +8,6 @@ import javax.swing.JTextArea;
 import javax.swing.SpringLayout;
 import java.awt.Color;
 
-
 public class ChatPanel extends JPanel
 {
 	private ChatbotController appController;
@@ -20,6 +19,19 @@ public class ChatPanel extends JPanel
 	public ChatPanel(ChatbotController appController)
 	{
 		super();	
+		this.appController = appController;
+		
+		
+		chatButton = new JButton("chat");
+		chatArea = new JTextArea(10, 25);
+		inputField = new JTextField(20);
+		appLayout = new SpringLayout();
+		
+		
+		
+		setupPanel();
+		setupLayout();
+		setupListeners();
 	}
 	
 	private void setupPanel()
