@@ -55,6 +55,12 @@ public class Chatbot
 		questions[1] = "What is your favorite color?";
 		questions[2] = "How has your day been?";
 		questions[3] = "What is your favorite food?";
+		questions[4] = "Are you dating anyone ;)?";
+		questions[5] = "How old are you?";
+		questions[6] = "What are your hobbies or interests?";
+		questions[7] = "Are you a normie?";
+		questions[8] = "Have you done your Bible studies today?";
+		questions[9] = "What kind of music do you listen to?";
 	}
 	
 	public String processConversation(String input)
@@ -176,12 +182,11 @@ public class Chatbot
 
 	public String [] getQuestions()
 	{
-		return null;
+		return questions;
 	}
 	
 	public String[] getVerbs()
 	{
-		
 		return verbs;
 	}
 

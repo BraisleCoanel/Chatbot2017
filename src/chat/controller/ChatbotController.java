@@ -32,6 +32,9 @@ public class ChatbotController
 			response = popupChat(response);
 			response = display.collectResponse(response);
 		}
+		/**
+		 * While loop makes the chatbot keep running.
+		 */
 	}
 	
 	public String interactWithChatbot(String input)
@@ -45,8 +48,7 @@ public class ChatbotController
 		
 		chatbotSays += chatbot.processConversation(chat);
 		
-		return chatbotSays;
-				
+		return chatbotSays;			
 	}
 	
 	public Chatbot getChatbot() 
