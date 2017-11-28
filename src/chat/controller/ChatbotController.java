@@ -7,6 +7,12 @@ import chat.model.Chatbot;
 import chat.view.ChatFrame;
 import chat.view.PopupDisplay;
 
+/**
+ * Manages the Chatbot application including the Model and Frame View package.
+ * @author Branton Martinson
+ * @version  11.21.17 Added Frame 1.3
+ */
+
 public class ChatbotController
 {
 	
@@ -38,6 +44,23 @@ public class ChatbotController
 		chatbotSays += chatbot.processConversation(input);
 		
 		return chatbotSays;
+	}
+	
+	public String useCheckers(String text)
+	{
+		String response = "";
+		
+		if(chatbot.contentChecker(text))
+		{
+			response += "This text matches the special content\n";
+		}
+		if(chatbot.cuteAnimalMemeChecker(text))
+		{
+			response += "";
+		}
+		//continue with all checkers except quit checker and something with an L
+		
+		return response;
 	}
 	
 	private void close()
