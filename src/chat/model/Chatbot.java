@@ -140,7 +140,7 @@ public class Chatbot
 		return false;
 	}
 	
-	public boolean inputHTMLChecker(String input)
+	public boolean htmlTagChecker(String input)
 	{
 		boolean containsHTML = false;
 		if(input == null || !input.contains("<"))
