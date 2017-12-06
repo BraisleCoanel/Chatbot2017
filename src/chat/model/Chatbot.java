@@ -168,9 +168,9 @@ public class Chatbot
 		{
 			//Others
 			tagText = input.substring(firstOpen + 1, firstClose).toLowerCase();
-			secondOpen = input.toLowerCase().indexOf("</" = tagText, firstClose);
+			secondOpen = input.toLowerCase().indexOf("</" + tagText, firstClose);
 		}
-		
+		return containsHTML;
 	}
 	
 	public boolean userNameChecker(String input)
