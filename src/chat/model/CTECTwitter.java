@@ -1,7 +1,7 @@
 package chat.model;
 
 import chat.controller.ChatbotController;
-//import chat.controller.IOController;
+import chat.controller.IOController;
 
 import twitter4j.TwitterException;
 import twitter4j.TwitterFactory;
@@ -17,7 +17,8 @@ import java.util.Scanner;
 import java.util.List;
 import java.util.ArrayList;
 import java.text.DecimalFormat;
-
+import java.util.HashMap;
+import java.text.DecimalFormat;
 
 public class CTECTwitter
 {
@@ -26,4 +27,13 @@ public class CTECTwitter
 	private List<Status> searchedTweets;
 	private List<String> tweetedWords;
 	private long totalWordCount;
+	
+	public CTECTwitter(ChatbotController appController)
+	{
+		this.appController = appController;
+		this.searchedTweets = new ArrayList<Status>();
+		this.tweetedWords = new ArrayList<String>();
+		this.chatbotTwitter = TwitterFactory.getSingleton();
+		this.wordsAndCount = new HashMap<String, Integer>();
+	}
 }
