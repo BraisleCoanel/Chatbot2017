@@ -24,7 +24,7 @@ public class CTECTwitter
 {
 	private ChatbotController appController;
 	private Twitter chatbotTwitter;
-	private List<Status> searchedTweets;
+	private List<javax.net.ssl.SSLEngineResult.Status> searchedTweets;
 	private List<String> tweetedWords;
 	private long totalWordCount;
 	
@@ -35,5 +35,37 @@ public class CTECTwitter
 		this.tweetedWords = new ArrayList<String>();
 		this.chatbotTwitter = TwitterFactory.getSingleton();
 		this.wordsAndCount = new HashMap<String, Integer>();
+	}
+	
+	private void collectTweets(String username)
+	{
+		searchedTweets.clear();
+		tweetedWords.clear();
+		
+		Paging statusPage = new Paging(1,100);
+		int page = 1;
+		long lastID = Long.MAX_VALUE;
+		
+		while(page <= 10)
+		{
+			statusPage.setPage(page);
+			try
+			{
+				ResponseList<Status> listedTweets = chatbotTwitter.getUserTimeline(username, statusPage);
+				for(Status current : listedTweets)
+				{
+					if(current.getID() < lastID)
+					{
+						searchedTweets.add(current);
+						lastID = current.getID();
+					}
+				}
+			}
+			catch(TwitterException searchTweetError)
+			{
+				appController.handleErrors(searchTweetError);
+			}
+			page++;
+		}
 	}
 }
