@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import chat.view.PopupDisplay;
 import chat.model.Chatbot;
 import chat.view.ChatFrame;
-import chat.view.PopupDisplay;
 
 /**
  * Manages the Chatbot application including the Model and Frame View package.

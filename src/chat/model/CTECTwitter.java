@@ -68,4 +68,14 @@ public class CTECTwitter
 			page++;
 		}
 	}
+	
+	public String getMostCommonWord(String username)
+	{
+		String mostCommon = "";
+		
+		collectTweets(username);
+		turnStatusesToWords();
+		
+		return mostCommon;
+	}
 }
