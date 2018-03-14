@@ -15,6 +15,7 @@ import twitter4j.Status;
 
 import java.util.Scanner;
 import java.util.List;
+import java.util.Map;
 import java.util.ArrayList;
 import java.text.DecimalFormat;
 import java.util.HashMap;
@@ -41,7 +42,7 @@ public class CTECTwitter
 	{
 		searchedTweets.clear();
 		tweetedWords.clear();
-		
+	
 		Paging statusPage = new Paging(1,100);
 		int page = 1;
 		long lastID = Long.MAX_VALUE;
@@ -75,6 +76,13 @@ public class CTECTwitter
 		
 		collectTweets(username);
 		turnStatusesToWords();
+		totalWordCount = tweetedWords.size();
+		String [] boring = createIgnoredWordArray();
+		removeBlanks();
+		trimTheBoringWords(boring);
+		generateWordCount();
+		
+		ArrayList<Map.Entry<String, Integer>> sorted = sortHashMap();
 		
 		return mostCommon;
 	}
